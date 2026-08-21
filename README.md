@@ -31,7 +31,7 @@ const client = new DhivehiGPT();
 const { data: voices } = await client.voices.list({ gender: 'female' });
 
 // Generate a TTS audio
-const audio = await client.tts.create({
+const audio = await client.tts.generate({
   text: 'ދިވެހިޖީޕީޓީއަށް މަރުޙަބާ',
   voice: 'hajja',
 });
@@ -55,11 +55,11 @@ The client exposes one namespace per API resource:
 client.voices.list(params?);        // GET /v1/voices
 client.voices.get(slug);            // GET /v1/voices/{slug}
 
-client.tts.list(params?);           // GET /v1/tts
-client.tts.create({ text, voice }); // POST /v1/tts
-client.tts.get(uuid);               // GET /v1/tts/{uuid}
-client.tts.update(uuid, { title }); // PUT /v1/tts/{uuid}
-client.tts.delete(uuid);            // DELETE /v1/tts/{uuid}
+client.tts.list(params?);             // GET /v1/tts
+client.tts.generate({ text, voice }); // POST /v1/tts
+client.tts.get(uuid);                 // GET /v1/tts/{uuid}
+client.tts.update(uuid, { title });   // PUT /v1/tts/{uuid}
+client.tts.delete(uuid);              // DELETE /v1/tts/{uuid}
 
 client.subscriptions.getBalance();  // GET /v1/balance
 
@@ -76,7 +76,7 @@ Every non-2xx response throws a typed error you can catch:
 import { AuthenticationError, InsufficientCreditsError, ValidationError } from '@javaabu/dhivehigpt-sdk';
 
 try {
-  await client.tts.create({ text: '...', voice: 'hajja' });
+  await client.tts.generate({ text: '...', voice: 'hajja' });
 } catch (error) {
   if (error instanceof InsufficientCreditsError) {
     // team is out of credits

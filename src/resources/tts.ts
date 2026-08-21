@@ -1,7 +1,7 @@
 import type { HttpClient } from '../http.js';
 import type {
-  CreateTTSAudioParams,
   DataResponse,
+  GenerateTTSAudioParams,
   ListTTSAudiosParams,
   PaginatedResponse,
   TTSAudio,
@@ -24,12 +24,19 @@ export class TTS {
    * team for the usage, and associates the generated audio with the current
    * API key.
    */
-  async create(params: CreateTTSAudioParams): Promise<TTSAudio> {
+  async generate(params: GenerateTTSAudioParams): Promise<TTSAudio> {
     const response = await this.http.request<DataResponse<TTSAudio>>('/tts', {
       method: 'POST',
       body: params,
     });
     return response.data;
+  }
+
+  /**
+   * @deprecated Use {@link TTS.generate} instead. `create` will be removed in a future major version.
+   */
+  create(params: GenerateTTSAudioParams): Promise<TTSAudio> {
+    return this.generate(params);
   }
 
   /** Returns one API-created TTS audio belonging to the current API key's team. */

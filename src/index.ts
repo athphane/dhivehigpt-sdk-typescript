@@ -25,6 +25,7 @@ export type {
   CreateTTSAudioParams,
   DataResponse,
   Gender,
+  GenerateTTSAudioParams,
   ListParams,
   ListTTSAudiosParams,
   ListTasksParams,

@@ -60,6 +60,17 @@ describe('TTS resource', () => {
     const { fetch, calls } = createMockFetch([{ status: 201, body: { data: audioFixture } }]);
     const client = new DhivehiGPT({ apiKey: 'test-key', fetch });
 
+    const audio = await client.tts.generate({ text: 'ދިވެހިޖީޕީޓީއަށް މަރުޙަބާ', voice: 'hajja' });
+
+    expect(calls[0]?.method).toBe('POST');
+    expect(calls[0]?.body).toEqual({ text: 'ދިވެހިޖީޕީޓީއަށް މަރުޙަބާ', voice: 'hajja' });
+    expect(audio).toEqual(audioFixture);
+  });
+
+  it('create() is a deprecated alias for generate()', async () => {
+    const { fetch, calls } = createMockFetch([{ status: 201, body: { data: audioFixture } }]);
+    const client = new DhivehiGPT({ apiKey: 'test-key', fetch });
+
     const audio = await client.tts.create({ text: 'ދިވެހިޖީޕީޓީއަށް މަރުޙަބާ', voice: 'hajja' });
 
     expect(calls[0]?.method).toBe('POST');
@@ -74,7 +85,7 @@ describe('TTS resource', () => {
     const client = new DhivehiGPT({ apiKey: 'test-key', fetch });
 
     await expect(
-      client.tts.create({ text: 'hi', voice: 'hajja' })
+      client.tts.generate({ text: 'hi', voice: 'hajja' })
     ).rejects.toBeInstanceOf(InsufficientCreditsError);
   });
 

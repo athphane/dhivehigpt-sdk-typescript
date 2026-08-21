@@ -17,7 +17,7 @@ import { DhivehiGPT } from '@javaabu/dhivehigpt-sdk';
 
 const client = new DhivehiGPT({ apiKey: process.env.DHIVEHIGPT_API_KEY });
 
-const audio = await client.tts.create({
+const audio = await client.tts.generate({
   text: 'ދިވެހިޖީޕީޓީއަށް މަރުޙަބާ',
   voice: 'hajja',
 });

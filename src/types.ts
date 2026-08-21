@@ -148,12 +148,15 @@ export interface ListTTSAudiosParams extends ListParams {
   date_to?: string;
 }
 
-export interface CreateTTSAudioParams {
+export interface GenerateTTSAudioParams {
   /** The text to convert into speech. Must not be greater than 10000 characters. */
   text: string;
   /** The slug of the voice to be used for audio generation. */
   voice: string;
 }
+
+/** @deprecated Use {@link GenerateTTSAudioParams} instead. */
+export type CreateTTSAudioParams = GenerateTTSAudioParams;
 
 export interface UpdateTTSAudioParams {
   /** A new display title for the TTS audio. Must not be greater than 255 characters. */

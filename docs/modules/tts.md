@@ -40,13 +40,18 @@ Converts text into speech with an available voice, charges the API key team for 
 the generated audio with the current API key.
 
 ```typescript
-const audio = await client.tts.create({
+const audio = await client.tts.generate({
   text: 'ދިވެހިޖީޕީޓީއަށް މަރުޙަބާ',
   voice: 'hajja',
 });
 
 console.log(audio.audio_url);
 ```
+
+:::caution Deprecated
+`client.tts.create()` is a deprecated alias for `client.tts.generate()`. It still works, but will be removed
+in a future major version — switch to `generate()`.
+:::
 
 ### Parameters
 

@@ -12,7 +12,7 @@ Every non-2xx response from the DhivehiGPT API is thrown as an error. All error 
 import { DhivehiGPTError } from '@javaabu/dhivehigpt-sdk';
 
 try {
-  await client.tts.create({ text: '...', voice: 'unknown-voice' });
+  await client.tts.generate({ text: '...', voice: 'unknown-voice' });
 } catch (error) {
   if (error instanceof DhivehiGPTError) {
     console.log(error.status, error.message, error.body);
