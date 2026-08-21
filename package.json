@@ -1,0 +1,61 @@
+{
+  "name": "@javaabu/dhivehigpt-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript/JavaScript SDK for the DhivehiGPT API",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Javaabu/dhivehigpt-sdk-typescript.git"
+  },
+  "keywords": [
+    "dhivehigpt",
+    "dhivehi",
+    "api",
+    "sdk",
+    "typescript",
+    "tts",
+    "text-to-speech"
+  ],
+  "author": {
+    "name": "Arushad Ahmed",
+    "url": "https://github.com/dash8x"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Javaabu/dhivehigpt-sdk-typescript/issues"
+  },
+  "homepage": "https://docs.javaabu.com/docs/dhivehigpt-sdk-typescript",
+  "devDependencies": {
+    "@types/node": "^20.17.9",
+    "@vitest/coverage-v8": "^2.1.9",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.9"
+  }
+}

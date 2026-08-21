@@ -1,0 +1,11 @@
+{
+    "position": 1.4,
+    "label": "Modules",
+    "collapsible": true,
+    "collapsed": false,
+    "link": {
+        "type": "generated-index",
+        "slug": "/dhivehigpt-sdk-typescript/_categories/modules",
+        "description": "Details of all the resources and errors offered by the DhivehiGPT SDK"
+    }
+}
