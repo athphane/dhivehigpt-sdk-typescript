@@ -106,7 +106,7 @@ new DhivehiGPT({
 ## Full documentation
 
 The full documentation, including every resource, type, and error, is published at
-**[docs.javaabu.com/docs/dhivehigpt-sdk-typescript](https://docs.javaabu.com/docs/dhivehigpt-sdk-typescript)**.
+**[docs.javaabu.com/docs/dhivehigpt-sdk-typescript](https://docs.javaabu.com/dhivehigpt-sdk-typescript)**.
 
 See also the [examples](examples) directory for runnable sample scripts.
 
